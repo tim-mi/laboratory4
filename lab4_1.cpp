@@ -1,7 +1,3 @@
-// lab4_1.cpp: определяет точку входа для консольного приложения.
-//
-
-#include "stdafx.h"
 #include <iostream>
 #include <stdlib.h>
 #include <stdio.h>
@@ -10,7 +6,6 @@ using namespace std;
 
 void main()
 {
-	setlocale(LC_ALL, "Russian");
 	int *p;
 	int n, i, sum = 0, max, min, mult=1;
 	cout << "n="; cin >> n;//количество элементов массива
@@ -40,8 +35,7 @@ void main()
 		else sum = sum + p[i];//сумма четных
 		cout << p[i] << " ";
 	}
-		cout << endl;
-		cout << "mult= " << mult << endl;//произведение нечетных чисел
+		cout <<endl << "mult= " << mult ;//произведение нечетных чисел
 		cout << endl << "sum= " << sum;
 	free(p);
 	system("pause");
