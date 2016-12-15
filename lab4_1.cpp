@@ -7,36 +7,31 @@ using namespace std;
 void main()
 {
 	int *p;
-	int n, i, sum = 0, max, min, mult=1;
-	cout << "n="; cin >> n;//количество элементов массива
+	int n, i, sum = 0, max, min, mult = 1;
+	cout << "n="; cin >> n;
 	p = (int*)malloc(n*sizeof(int));//преобразовываем тип и выделяем память для каждого указателя в массиве указателей
-	for (i = 0; i < n; i++)//заполняем массив и выводим на печать
+	for (i = 0; i < n; i++)
 	{
-		p[i] = rand() % 100;
+		p[i] = rand() % 101;
 		cout << p[i] << " ";
 	}
 	cout << endl;
 	max = p[0];
 	min = p[0];
-	for (i = 0; i < n; i++)//находим максимальный и минимальный элемент массива
+	for (i = 0; i < n; i++)
 	{
 		if (p[i] < min) min = p[i];
 		if (p[i] > max) max = p[i];
 	}
 	cout << "min= " << min << endl;
 	cout << "max= " << max << endl;
-		for (i = 0; i < n; i++)
-		{
-			if (p[i] % 2 != 0)
-			{
-				mult = mult*p[i];
-				p[i] = 0;// обнуляем нечетные числа
-			}
-		else sum = sum + p[i];//сумма четных
-		cout << p[i] << " ";
+	for (i = 0; i < n; i++)	if (p[i] % 2 != 0) {
+		sum = sum + p[i];
+		mult = mult*p[i];
 	}
-		cout <<endl << "mult= " << mult ;//произведение нечетных чисел
-		cout << endl << "sum= " << sum;
+	cout << endl << "mult= " << mult;
+	cout << endl << "sum= " << sum;
+	cout << endl;
 	free(p);
 	system("pause");
 }
